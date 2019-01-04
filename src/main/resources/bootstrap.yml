@@ -3,6 +3,9 @@ spring:
     # Name of your app, will be stored in config/ConsulDemo in consul for example
     name: ConsulDemo
   cloud:
+    vault:
+      token: s.qk1iJAlntYkLyLGKdZ5E847a
+      scheme: http
     consul:
       # Host url of consul instance
       host: localhost
