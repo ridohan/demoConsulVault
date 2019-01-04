@@ -1,11 +1,12 @@
 spring:
   application:
+    # Name of your app, will be stored in config/ConsulDemo in consul for example
     name: ConsulDemo
   cloud:
     consul:
+      # Host url of consul instance
       host: localhost
+      # Host port of consul instance
       port: 8500
       config:
         enabled: true
-
-foo: bar
