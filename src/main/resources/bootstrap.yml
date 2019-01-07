@@ -4,7 +4,12 @@ spring:
     name: ConsulDemo
   cloud:
     vault:
-      token: s.qk1iJAlntYkLyLGKdZ5E847a
+      # Host url of vault instance
+      host: localhost
+      # Host port of vault instance
+      port: 8200
+      # DEV TEST PURPOSE ONLY : we use Root Token and HTTP protocol : THIS IS NOT SECURE
+      token: s.75vElDm67h0xFDbmVudNGH1T
       scheme: http
     consul:
       # Host url of consul instance
