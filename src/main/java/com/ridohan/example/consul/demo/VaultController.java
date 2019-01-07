@@ -41,4 +41,9 @@ public class VaultController {
         Credentials retrievedCredentials =  response.getData();
         return retrievedCredentials.toString();
     }
+
+    @GetMapping("/passwordFromPropertiesFile")
+    public String getFooFromPropertiesFile() {
+        return propertyFromVaultUsedInPropertiesFile;
+    }
 }
