@@ -34,7 +34,7 @@ spring:
 ### 3. Retrieve configuration in code 
 CF : [ConsulController Class](src/main/java/com/ridohan/example/consul/demo/ConsulController.java)
 
-The configuration key on Consul would be : config/ConsulDemo/foo
+The configuration on Consul need to be in config/ConsulDemo/foo
 
 
 ## Vault Configuration 
@@ -71,4 +71,7 @@ spring:
 ### 3. Retrieve configuration in code
 CF : [VaultController Class](src/main/java/com/ridohan/example/consul/demo/VaultController.java)
 
-The configuration key on Consul would be : secret/ConsulDemo
+The configuration key on Vault need to be written in : secret/ConsulDemo
+```
+vault write secret/ConsulDemo password=passpass
+```
