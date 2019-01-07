@@ -32,7 +32,7 @@ spring:
 
 ```
 ### 3. Retrieve configuration in code 
-CF : [ConsulController Class](ConsulController.java)
+CF : [ConsulController Class](src/main/java/com/ridohan/example/consul/demo/ConsulController.java)
 
 The configuration key on Consul would be : config/ConsulDemo/foo
 
@@ -69,6 +69,6 @@ spring:
 
 ```
 ### 3. Retrieve configuration in code
-CF : [VaultController Class](VaultController.java)
+CF : [VaultController Class](src/main/java/com/ridohan/example/consul/demo/VaultController.java)
 
 The configuration key on Consul would be : secret/ConsulDemo
