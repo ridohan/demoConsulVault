@@ -1,0 +1,17 @@
+consul kv put config/ConsulDemo/foo bar
+
+vault write secret/ConsulDemo password=SECRETPASSWORD
+
+## For Database user creation on the fly
+
+vault write database/config/mysql-dummy \
+   plugin_name=mysql-legacy-database-plugin \
+   connection_url="{{username}}:{{password}}@tcp(db:3306)/dummy" \
+   allowed_roles="*" \
+   username="root" \
+   password="simplepassword"
+
+
+vault write database/roles/dummy-accounts-ro \
+     db_name=mysql-dummy \
+     creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT SELECT ON dummy.* TO '{{name}}'@'%';"

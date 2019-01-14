@@ -9,8 +9,14 @@ spring:
       # Host port of vault instance
       port: 8200
       # DEV TEST PURPOSE ONLY : we use Root Token and HTTP protocol : THIS IS NOT SECURE
-      token: s.75vElDm67h0xFDbmVudNGH1T
+      token: s.7Z3DQsgx2EDn3Uu4DQmCSkgt
       scheme: http
+
+      database:
+        enabled: true
+        role: fakebank-accounts-ro
+
+
     consul:
       # Host url of consul instance
       host: localhost

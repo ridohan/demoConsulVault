@@ -1,0 +1,10 @@
+properties:
+  consul: ${foo}-FOO!
+  vault: ${password}-FOO!
+
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/fakebank
+
+    driverClassName: com.mysql.jdbc.Driver

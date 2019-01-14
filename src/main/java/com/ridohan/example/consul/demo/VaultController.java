@@ -4,10 +4,15 @@ package com.ridohan.example.consul.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.vault.core.VaultTemplate;
 import org.springframework.vault.support.VaultResponseSupport;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.util.List;
 
 @RestController
 @RefreshScope
@@ -19,6 +24,9 @@ public class VaultController {
 
     @Autowired
     private VaultTemplate vaultTemplate;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
 
     @Value("${password}")
@@ -45,5 +53,12 @@ public class VaultController {
     @GetMapping("/passwordFromPropertiesFile")
     public String getFooFromPropertiesFile() {
         return propertyFromVaultUsedInPropertiesFile;
+    }
+
+
+    @GetMapping("/checkDatabaseAccess")
+    public String checkDatabaseAccess() {
+        List<String> result = jdbcTemplate.queryForList("SHOW DATABASES;",String.class);
+        return result.toString();
     }
 }
