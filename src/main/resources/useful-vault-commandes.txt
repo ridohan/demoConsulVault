@@ -4,6 +4,7 @@ vault write secret/ConsulDemo password=SECRETPASSWORD
 
 ## For Database user creation on the fly
 
+vault secrets enable database
 vault write database/config/mysql-dummy \
    plugin_name=mysql-legacy-database-plugin \
    connection_url="{{username}}:{{password}}@tcp(db:3306)/dummy" \
