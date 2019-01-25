@@ -43,7 +43,7 @@ public class VaultController {
 
     @GetMapping("/writeAndRetrieveCredentials")
     public String writeAndRetrieveCredentials() {
-        Credentials credentials = new Credentials("username", "password");
+        Credentials credentials = new Credentials("TOTO", "TATA");
         vaultTemplate.write("secret/test",credentials);
         VaultResponseSupport<Credentials> response = vaultTemplate.read("secret/test",Credentials.class);
         Credentials retrievedCredentials =  response.getData();
